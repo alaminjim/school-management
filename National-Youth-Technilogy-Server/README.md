@@ -1,124 +1,71 @@
-# Express Template
+# 🎛️ BNYTI Academy Management System - Backend API
 
-Production-ready Express (TypeScript) starter for building REST APIs and backend services.
-
-## Requirements
-
-- Node.js 18+ (LTS recommended)
-- pnpm or npm
-
-## Quick Start
-
-Install dependencies and start the development server:  
-
-```bash
-# using pnpm (recommended) 
-pnpm install
-pnpm dev
-
-# or using npm
-npm install
-npm run dev
-```
-
-## Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build TypeScript
-- `npm start` - Start production server
-
-## Environment
-
-Use a `.env` file or environment variables for configuration. See `.env.example` for available keys.
-
-## Recommended Folder & File Structure
-
-```text
-express-api/
-├── src/
-│   ├── app.ts
-│   ├── server.ts
-│
-│   ├── config/
-│   │   ├── env.ts
-│   │   ├── cors.ts
-│   │   ├── rateLimit.ts
-│   │   └── logger.ts                    # (optional)
-│
-│   ├── database/
-│   │   └── prisma.ts                     # PrismaClient singleton
-│   
-│   ├── lib/ 
-│       └── auth.ts                   # Auth server config
-│
-│   ├── shared/
-│   │   ├── middlewares/
-│   │   │   ├── authorize.middleware.ts        # reads session + attaches req.user
-│   │   │   ├── error.middleware.ts
-│   │   │   └── notFound.middleware.ts
-│   │   ├── errors/
-│   │   │   ├── ApiError.ts
-│   │   │   └── errorCodes.ts
-│   │   ├── utils/
-│   │   │   ├── catchAsync.ts
-│   │   │   ├── sendResponse.ts
-│   │   │   └── pagination.ts
-│   │   └── logger/
-│   │       └── logger.ts
-│
-│   ├── modules/
-│   │   ├── auth/
-│   │   │   ├── auth.routes.ts
-│   │   │   ├── auth.controller.ts
-│   │   │   ├── auth.service.ts
-│   │   │   ├── auth.validator.ts
-│   │   │   └── auth.types.ts
-│   │   ├── users/
-│   │   │   ├── users.routes.ts
-│   │   │   ├── users.controller.ts
-│   │   │   ├── users.service.ts
-│   │   │   ├── users.repository.ts
-│   │   │   ├── users.validator.ts
-│   │   │   └── users.types.ts
-│   │   └── products/
-│   │       ├── products.routes.ts
-│   │       ├── products.controller.ts
-│   │       ├── products.service.ts
-│   │       ├── products.repository.ts
-│   │       ├── products.validator.ts
-│   │       └── products.types.ts
-│
-│   ├── routes/
-│   │   └── index.ts                      # mounts all module routes
-│   │
-│   └── types/
-│       └── express.d.ts                  # Request typing (req.user)
-│
-├── prisma/
-│   ├── schema.prisma
-│   ├── migrations/
-│   └── seed.ts
-│
-├── tests/
-│   ├── unit/
-│   └── integration/
-│
-├── Dockerfile
-├── docker-compose.yml
-├── package.json
-├── tsconfig.json
-├── eslint.config.js
-├── .env.example
-└── README.md
-```
+This is the Express.js (TypeScript) REST API backend for the **Bangladesh National Youth Technical Institute (BNYTI)** Academy Management System. It manages the database, executes auth flows, computes results/grades, generates official PDFs, and handles payment gateway queries.
 
 ---
 
-## Generated with StackKit
+## ⚡ Tech Stack & Features
 
-This project was scaffolded using **StackKit** — a CLI toolkit for building production-ready applications.
+*   **Runtime:** Node.js & Express.js (TypeScript)
+*   **Database ORM:** Prisma ORM (Version 7.x)
+*   **Database Engine:** PostgreSQL
+*   **Authentication:** Better Auth (Database sessions with multi-role permissions: Super Admin, Branch User, Student)
+*   **Security:** Helmet, Express Rate Limit, CORS configuration
+*   **Key Modules:**
+    *   **Student Profile & Grade Processor:** CGPA/GPA computations, subject credits, written/viva/practical grades.
+    *   **Document Generation Engine:** Generates official PDFs (Admit Cards, Transcripts, Completion Certificates, ID Badges) using EJS templates.
+    *   **Exam Evaluator:** Validates real-time MCQ options, counts attempts, restricts retries, and computes immediate scores.
+    *   **Branch Approvals:** Verifies, approves, and holds branch login registrations.
+    *   **Email Notification System:** Auto-sends emails via Nodemailer with customized HTML/EJS configurations.
+    *   **SSLCommerz Gateway Integration:** Handles regional checkout queries and updates database logs.
 
-- Generated via: `npx stackkit@latest create`
+---
 
-Learn more about StackKit:
-https://github.com/tariqul420/stackkit
+## ⚙️ Local Development Setup
+
+### 1. Install Dependencies
+Ensure you have Node.js (v20+) and your package manager configured:
+```bash
+pnpm install
+# or
+npm install
+```
+
+### 2. Configure Environment Variables
+Create a `.env` file from the example:
+```bash
+cp .env.example .env
+```
+Provide the following credentials:
+*   `DATABASE_URL`: PostgreSQL database link.
+*   `BETTER_AUTH_SECRET`: Random hash.
+*   `EMAIL_SENDER_SMTP_USER` & `EMAIL_SENDER_SMTP_PASS`: SMTP email coordinates.
+
+### 3. Generate Database Client & Sync Schema
+The database schema is modularly split under `prisma/`. Use Prisma CLI to generate client and synchronize databases:
+```bash
+pnpm prisma generate
+pnpm prisma db push
+```
+
+### 4. Seed Seed Data & Launch Dev Server
+```bash
+pnpm run seed
+pnpm run dev
+```
+The server will boot up and start listening on `http://localhost:5000`.
+
+---
+
+## 📂 Core Endpoints Map
+
+A JSON layout of available routes can be inspected in [ENDPOINTS.json](./ENDPOINTS.json). Major namespaces:
+*   `/api/v1/auth/*` - Better Auth session handlers.
+*   `/StudentsList` - Manage student records and generate credentials.
+*   `/allBranches` - Branch validation dashboard.
+*   `/api/generate-pdf/*` - PDF builder controllers.
+*   `/OnlineExam` - MCQ submissions and scoring.
+
+---
+
+> 📘 For client integration details and the live application structure, read the main [Root README](../README.md).

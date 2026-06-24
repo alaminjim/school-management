@@ -4,8 +4,7 @@ import { envVars } from "./env";
 const origin = [
   envVars.FRONTEND_URL as string,
   "http://localhost:3000",
-  "https://technical-education-technilogy.vercel.app",
-  "https://national-youth-technilogy.vercel.app",
+  "https://school-management-system-0.netlify.app",
 ];
 
 const cors = createCors({

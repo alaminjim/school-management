@@ -1,0 +1,95 @@
+model User {
+  id                     String      @id @default(cuid())
+  name                   String?
+  email                  String      @unique
+  username               String      @unique
+  password               String?
+  instituteName          String?
+  directorName           String?
+  mobileNumber           String?
+  gender                 String?
+  nationality            String?
+  instituteAge           String?
+  religion               String?
+  fullAddress            String?
+  village                String?
+  postOffice             String?
+  thanaUpazila           String?
+  district               String?
+  fatherName             String?
+  motherName             String?
+  courseName             String?
+  duration               String?
+  startYear              String?
+  startMonth             String?
+  endYear                String?
+  endMonth               String?
+  educationQualification String?
+  directorPhoto          String?
+  institutePhoto         String?
+  nationalIdPhoto        String?
+  signaturePhoto         String?
+  emailVerified          Boolean     @default(false)
+  needPasswordChange     Boolean     @default(true)
+  isDeleted              Boolean     @default(false)
+  deletedAt              DateTime?
+  role                   Role        @default(USER)
+  status                 UserStatus  @default(PENDING)
+  createdAt              DateTime    @default(now())
+  updatedAt              DateTime    @updatedAt
+  branchId               String?     @unique
+  accounts               Account[]
+  mediaFiles             MediaFile[]
+  sessions               Session[]
+  students               Student[]
+  questions              Question[]
+
+  @@map("user")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  expiresAt DateTime
+  token     String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ipAddress String?
+  userAgent String?
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("session")
+}
+
+model Account {
+  id                    String    @id @default(cuid())
+  accountId             String
+  providerId            String
+  userId                String
+  accessToken           String?
+  refreshToken          String?
+  idToken               String?
+  accessTokenExpiresAt  DateTime?
+  refreshTokenExpiresAt DateTime?
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("account")
+}
+
+model Verification {
+  id         String   @id @default(cuid())
+  identifier String
+  value      String
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([identifier])
+  @@map("verification")
+}

@@ -1,0 +1,45 @@
+model Success {
+  id        String   @id @default(cuid())
+  name      String
+  image     String
+  position  Json
+  items     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("success")
+}
+
+model Testimonials {
+  id        String   @id @default(cuid())
+  name      String
+  image     String
+  position  Json
+  items     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("testimonials")
+}
+
+model Instructors {
+  id        String   @id @default(cuid())
+  name      String
+  image     String
+  position  Json
+  items     Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("instructors")
+}
+
+model InfoCard {
+  id        String   @id @default(cuid())
+  title     String
+  content   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("info_card")
+}

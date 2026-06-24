@@ -1,0 +1,39 @@
+model Question {
+  id           String       @id @default(cuid())
+  questionText String
+  options      Option[]
+  mark          Int          @default(1)
+  createdAt    DateTime     @default(now())
+  userId       String
+  user         User         @relation(fields: [userId], references: [id])
+}
+
+model Option {
+  id         String   @id @default(cuid())
+  text       String
+  isCorrect  Boolean  @default(false)
+  questionId String
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+}
+
+model ExamAttempt {
+  id           String       @id @default(cuid())
+  studentId    String
+  student      Student      @relation(fields: [studentId], references: [id])
+  score        Int
+  totalMarks   Int
+  lastAttempt  DateTime     @default(now()) @updatedAt  
+  canRetry     Boolean      @default(false)
+  attemptCount Int          @default(1)
+  answers      ExamAnswer[]
+  createdAt    DateTime     @default(now())
+}
+
+model ExamAnswer {
+  id             String      @id @default(cuid())
+  examAttemptId  String
+  examAttempt    ExamAttempt @relation(fields: [examAttemptId], references: [id] , onDelete: Cascade)
+  questionId     String
+  selectedOption String
+  isCorrect      Boolean
+}

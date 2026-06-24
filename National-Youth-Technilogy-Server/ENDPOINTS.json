@@ -1,0 +1,397 @@
+[
+  {
+    "method": "GET",
+    "path": "/getrole/:email",
+    "line": 172
+  },
+  {
+    "method": "POST",
+    "path": "/NoticeAdd",
+    "line": 192
+  },
+  {
+    "method": "GET",
+    "path": "/NoticeAdd",
+    "line": 200
+  },
+  {
+    "method": "DELETE",
+    "path": "/NoticeAdd/:id",
+    "line": 206
+  },
+  {
+    "method": "POST",
+    "path": "/bulk",
+    "line": 225
+  },
+  {
+    "method": "GET",
+    "path": "/bulk",
+    "line": 243
+  },
+  {
+    "method": "DELETE",
+    "path": "/bulk",
+    "line": 251
+  },
+  {
+    "method": "POST",
+    "path": "/subjectAdder",
+    "line": 286
+  },
+  {
+    "method": "GET",
+    "path": "/subjectAdder",
+    "line": 294
+  },
+  {
+    "method": "DELETE",
+    "path": "/subjectAdder/:id",
+    "line": 300
+  },
+  {
+    "method": "GET",
+    "path": "/api/generate-pdf/:studentId",
+    "line": 321
+  },
+  {
+    "method": "POST",
+    "path": "/allBranches",
+    "line": 804
+  },
+  {
+    "method": "PUT",
+    "path": "/selectedBranch/:id",
+    "line": 875
+  },
+  {
+    "method": "DELETE",
+    "path": "/StudentsList/:studentId",
+    "line": 891
+  },
+  {
+    "method": "DELETE",
+    "path": "/allBranches/:id",
+    "line": 910
+  },
+  {
+    "method": "GET",
+    "path": "/allBranches",
+    "line": 965
+  },
+  {
+    "method": "GET",
+    "path": "/allCourses",
+    "line": 970
+  },
+  {
+    "method": "DELETE",
+    "path": "/deleteCourse/:id",
+    "line": 975
+  },
+  {
+    "method": "GET",
+    "path": "/numberOfCourses",
+    "line": 983
+  },
+  {
+    "method": "GET",
+    "path": "/currentUserInfo",
+    "line": 988
+  },
+  {
+    "method": "POST",
+    "path": "/pendingBranch",
+    "line": 1009
+  },
+  {
+    "method": "POST",
+    "path": "/upload-to-imgbb",
+    "line": 1018
+  },
+  {
+    "method": "POST",
+    "path": "/addCourse",
+    "line": 1052
+  },
+  {
+    "method": "POST",
+    "path": "/approveBranch",
+    "line": 1061
+  },
+  {
+    "method": "POST",
+    "path": "/rejectBranch",
+    "line": 1070
+  },
+  {
+    "method": "POST",
+    "path": "/api/OMRSheet",
+    "line": 1083
+  },
+  {
+    "method": "GET",
+    "path": "/api/OMRSheet",
+    "line": 1095
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/OMRSheet/:id",
+    "line": 1103
+  },
+  {
+    "method": "POST",
+    "path": "/api/AdminMessageOMRSheet",
+    "line": 1134
+  },
+  {
+    "method": "GET",
+    "path": "/api/AdminMessageOMRSheet",
+    "line": 1145
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/AdminMessageOMRSheet/:id",
+    "line": 1156
+  },
+  {
+    "method": "POST",
+    "path": "/api/noticeboardyourpdf",
+    "line": 1205
+  },
+  {
+    "method": "GET",
+    "path": "/api/noticeboardyourpdf",
+    "line": 1216
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/noticeboardyourpdf/:id",
+    "line": 1227
+  },
+  {
+    "method": "POST",
+    "path": "/api/AllTable",
+    "line": 1263
+  },
+  {
+    "method": "GET",
+    "path": "/api/AllTable",
+    "line": 1274
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/AllTable/:id",
+    "line": 1282
+  },
+  {
+    "method": "POST",
+    "path": "/OnlineExamPageAddAdmin",
+    "line": 1313
+  },
+  {
+    "method": "GET",
+    "path": "/OnlineExamPageAddAdmin",
+    "line": 1324
+  },
+  {
+    "method": "POST",
+    "path": "/api/ExamSuggestion",
+    "line": 1340
+  },
+  {
+    "method": "GET",
+    "path": "/api/ExamSuggestion",
+    "line": 1351
+  },
+  {
+    "method": "DELETE",
+    "path": "/api/ExamSuggestion/:id",
+    "line": 1361
+  },
+  {
+    "method": "PATCH",
+    "path": "/StudentsList/:id",
+    "line": 1399
+  },
+  {
+    "method": "DELETE",
+    "path": "/StudentsList/:id",
+    "line": 1454
+  },
+  {
+    "method": "GET",
+    "path": "/studentResult/:studentId",
+    "line": 1479
+  },
+  {
+    "method": "POST",
+    "path": "/OnlineExam",
+    "line": 1506
+  },
+  {
+    "method": "GET",
+    "path": "/OnlineExam",
+    "line": 1524
+  },
+  {
+    "method": "POST",
+    "path": "/StudentsList",
+    "line": 1534
+  },
+  {
+    "method": "GET",
+    "path": "/StudentsList",
+    "line": 1707
+  },
+  {
+    "method": "POST",
+    "path": "/users",
+    "line": 1730
+  },
+  {
+    "method": "POST",
+    "path": "/StudentsList",
+    "line": 1738
+  },
+  {
+    "method": "GET",
+    "path": "/StudentsList/:id",
+    "line": 1755
+  },
+  {
+    "method": "PATCH",
+    "path": "/StudentsList/:id",
+    "line": 1766
+  },
+  {
+    "method": "POST",
+    "path": "/footer",
+    "line": 1788
+  },
+  {
+    "method": "DELETE",
+    "path": "/footer/:id",
+    "line": 1804
+  },
+  {
+    "method": "PUT",
+    "path": "/footer/:id",
+    "line": 1823
+  },
+  {
+    "method": "GET",
+    "path": "/footer",
+    "line": 1849
+  },
+  {
+    "method": "GET",
+    "path": "/cards",
+    "line": 1862
+  },
+  {
+    "method": "POST",
+    "path": "/cards",
+    "line": 1868
+  },
+  {
+    "method": "PUT",
+    "path": "/cards/:id",
+    "line": 1873
+  },
+  {
+    "method": "DELETE",
+    "path": "/cards/:id",
+    "line": 1902
+  },
+  {
+    "method": "GET",
+    "path": "/successStudents",
+    "line": 1909
+  },
+  {
+    "method": "GET",
+    "path": "/AllStudents",
+    "line": 1913
+  },
+  {
+    "method": "POST",
+    "path": "/successStudents",
+    "line": 1919
+  },
+  {
+    "method": "GET",
+    "path": "/InfoCard",
+    "line": 1961
+  },
+  {
+    "method": "POST",
+    "path": "/InfoCard",
+    "line": 1967
+  },
+  {
+    "method": "PUT",
+    "path": "/InfoCard/:id",
+    "line": 1973
+  },
+  {
+    "method": "DELETE",
+    "path": "/InfoCard/:id",
+    "line": 1983
+  },
+  {
+    "method": "GET",
+    "path": "/homeSlider",
+    "line": 1992
+  },
+  {
+    "method": "POST",
+    "path": "/homeSlider",
+    "line": 1998
+  },
+  {
+    "method": "PATCH",
+    "path": "/StudentsList/:id",
+    "line": 2018
+  },
+  {
+    "method": "POST",
+    "path": "/api/generate-admit-card",
+    "line": 2056
+  },
+  {
+    "method": "POST",
+    "path": "/api/generate-registration-Card",
+    "line": 2603
+  },
+  {
+    "method": "GET",
+    "path": "/student-profile/:studentId",
+    "line": 2870
+  },
+  {
+    "method": "POST",
+    "path": "/api/generate-certificate",
+    "line": 3192
+  },
+  {
+    "method": "POST",
+    "path": "/api/generate-transcript",
+    "line": 3416
+  },
+  {
+    "method": "POST",
+    "path": "/api/generate-transcriptOne",
+    "line": 3613
+  },
+  {
+    "method": "POST",
+    "path": "/api/generate-NIDCard",
+    "line": 3808
+  },
+  {
+    "method": "GET",
+    "path": "/",
+    "line": 4004
+  }
+]

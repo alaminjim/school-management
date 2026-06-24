@@ -1,0 +1,12 @@
+model MediaFile {
+  id        String   @id @default(cuid())
+  filename  String
+  url       String
+  mimeType  String?
+  size      Int?
+  createdAt DateTime @default(now())
+  ownerId   String?
+  owner     User?    @relation(fields: [ownerId], references: [id])
+
+  @@map("media_files")
+}

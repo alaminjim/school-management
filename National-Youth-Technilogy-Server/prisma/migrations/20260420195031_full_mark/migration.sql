@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "subjects" ADD COLUMN     "fullMark" DOUBLE PRECISION NOT NULL DEFAULT 0;

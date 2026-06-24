@@ -1,0 +1,75 @@
+model Student {
+  id                     String    @id @default(cuid())
+  name                   String
+  email                  String    @unique
+  picture                String    @unique
+  studentId              String    @unique
+  roll                   String    @unique
+  regNumber              String    @unique
+  guardianPhone          String?
+  issueDate              DateTime?
+  expireDate             DateTime?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+  directorName           String?
+  district               String?
+  dob                    DateTime?
+  duration               String?
+  educationQualification String?
+  fatherName             String?
+  gender                 String?
+  institute              String?
+  month1                 String?
+  month2                 String?
+  motherName             String?
+  passport               String?
+  studentAddress         String?
+  thana                  String?
+  userId                 String?
+  year1                  String?
+  year2                  String?
+  examAllowed Boolean @default(false)
+  marks                  Mark[]
+  user                   User?     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  examAttempts ExamAttempt[]
+  
+  @@map("students")
+}
+
+model Mark {
+  id            String    @id @default(cuid())
+  semesterTitle String
+  totalCredit   Float
+  totalPoints   Float
+  cgpa          Float
+  grade         String
+  status        String
+  studentId     String
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  student       Student   @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subjects      Subject[]
+
+  @@map("marks")
+}
+
+model Subject {
+  id          String   @id @default(cuid())
+  subjectCode String
+  subjectName String
+  credit      Float
+  written     Float    @default(0)
+  practical   Float    @default(0)
+  viva        Float    @default(0)
+  totalMarks  Float
+  fullMark    Float    @default(0)
+  gradePoint  Float
+  grade       String
+  markId      String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  mark        Mark     @relation(fields: [markId], references: [id], onDelete: Cascade)
+
+  @@unique([subjectCode, markId])
+  @@map("subjects")
+}

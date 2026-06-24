@@ -1,0 +1,12 @@
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  createdAt DateTime @default(now())
+  isRead    Boolean  @default(false)
+  phone     String?
+  subject   String?
+
+  @@map("contact_messages")
+}

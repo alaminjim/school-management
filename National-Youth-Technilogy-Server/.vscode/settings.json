@@ -1,0 +1,20 @@
+{
+    "prisma-smart-formatter.typescript.defaultFormatter": "esbenp.prettier-vscode",
+    "prisma-smart-formatter.typescriptreact.defaultFormatter": "esbenp.prettier-vscode",
+    "cSpell.words": [
+        "abou",
+        "aboutsection",
+        "ambun",
+        "GOCSPX",
+        "googleusercontent",
+        "Imagetext",
+        "neondb",
+        "noticeadd",
+        "pooler",
+        "sslmode",
+        "successstudents",
+        "Upazila",
+        "কোর্সটি",
+        "পাওয়া"
+    ]
+}

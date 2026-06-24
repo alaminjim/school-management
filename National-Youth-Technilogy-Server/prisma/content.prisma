@@ -1,0 +1,20 @@
+model Card {
+  id        String   @id @default(cuid())
+  title     String
+  desc      String?
+  image     String?
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("cards")
+}
+model Footer {
+  id          String   @id @default(cuid())
+  footerImage String
+  content     Json
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("footer")
+}

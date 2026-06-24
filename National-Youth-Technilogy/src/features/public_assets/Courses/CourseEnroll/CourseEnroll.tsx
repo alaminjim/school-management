@@ -10,8 +10,8 @@ const enrollment = {
     title: "Full Stack Web Development",
     price: 4999,
   },
-  studentName: "Robin Islam",
-  email: "robin@gmail.com",
+  studentName: "Al Amin Islam",
+  email: "jimalamin7@gmail.com",
   phone: "01700000000",
   courseTitle: "Full Stack Web Development",
   coursePrice: 4999,
@@ -30,11 +30,13 @@ export default function EnrollmentPage() {
         {/* Header */}
         <div className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">Enrollment Details</h1>
-          <span className={`px-3 py-1 rounded-full text-sm font-medium {
+          <span
+            className={`px-3 py-1 rounded-full text-sm font-medium {
             enrollment.status === "ACTIVE"
               ? "bg-green-100 text-green-700"
               : "bg-gray-200"
-          }`}>
+          }`}
+          >
             {enrollment.status}
           </span>
         </div>
@@ -43,16 +45,26 @@ export default function EnrollmentPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="p-4 border rounded-xl">
             <h2 className="font-semibold mb-2">Student Info</h2>
-            <p><strong>Name:</strong> {enrollment.studentName}</p>
-            <p><strong>Email:</strong> {enrollment.email}</p>
-            <p><strong>Phone:</strong> {enrollment.phone}</p>
+            <p>
+              <strong>Name:</strong> {enrollment.studentName}
+            </p>
+            <p>
+              <strong>Email:</strong> {enrollment.email}
+            </p>
+            <p>
+              <strong>Phone:</strong> {enrollment.phone}
+            </p>
           </div>
 
           {/* Course Info */}
           <div className="p-4 border rounded-xl">
             <h2 className="font-semibold mb-2">Course Info</h2>
-            <p><strong>Title:</strong> {enrollment.courseTitle}</p>
-            <p><strong>Price:</strong> ৳{enrollment.coursePrice}</p>
+            <p>
+              <strong>Title:</strong> {enrollment.courseTitle}
+            </p>
+            <p>
+              <strong>Price:</strong> ৳{enrollment.coursePrice}
+            </p>
           </div>
         </div>
 
@@ -60,17 +72,29 @@ export default function EnrollmentPage() {
         <div className="p-4 border rounded-xl">
           <h2 className="font-semibold mb-2">Payment Info</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <p><strong>Status:</strong> {enrollment.paymentStatus}</p>
-            <p><strong>Method:</strong> {enrollment.paymentMethod}</p>
-            <p><strong>Transaction ID:</strong> {enrollment.transactionId}</p>
+            <p>
+              <strong>Status:</strong> {enrollment.paymentStatus}
+            </p>
+            <p>
+              <strong>Method:</strong> {enrollment.paymentMethod}
+            </p>
+            <p>
+              <strong>Transaction ID:</strong> {enrollment.transactionId}
+            </p>
           </div>
         </div>
 
         {/* Dates */}
         <div className="p-4 border rounded-xl">
           <h2 className="font-semibold mb-2">Timeline</h2>
-          <p><strong>Enrolled At:</strong> {new Date(enrollment.enrolledAt).toLocaleString()}</p>
-          <p><strong>Updated At:</strong> {new Date(enrollment.updatedAt).toLocaleString()}</p>
+          <p>
+            <strong>Enrolled At:</strong>{" "}
+            {new Date(enrollment.enrolledAt).toLocaleString()}
+          </p>
+          <p>
+            <strong>Updated At:</strong>{" "}
+            {new Date(enrollment.updatedAt).toLocaleString()}
+          </p>
         </div>
 
         {/* Actions */}

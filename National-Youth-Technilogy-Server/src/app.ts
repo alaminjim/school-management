@@ -41,7 +41,7 @@ app.get("/", (_req: Request, res: Response) => {
     description:
       "Built with  A production-ready Express template with TypeScript, security, and best practices.",
     version: "1.0.0",
-    docs: "https://github.com/Robinishear",
+    docs: "https://github.com/alaminjim",
   });
 });
 
